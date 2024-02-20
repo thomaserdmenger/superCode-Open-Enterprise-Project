@@ -272,6 +272,26 @@ header .grid article p {
   width: 90%;
 }
 
+/* ! Footer */
+
+footer {
+  display: flex;
+  padding-inline: 5%;
+  justify-content: space-between;
+  padding-block: 2rem;
+  font-size: clamp(1.2rem, 1.2704rem + -0.3005vw, 1rem);
+}
+
+footer nav {
+  all: unset;
+  display: flex;
+  gap: 2rem;
+}
+
+footer nav a:last-of-type {
+  color: var(--color-green);
+}
+
 /* ! Media Queries */
 
 @media only screen and (max-width: 900px) {
@@ -310,5 +330,13 @@ header .grid article p {
   .investors article:last-of-type {
     grid-column: 1 / span 1;
     grid-row: 2 / span 1;
+  }
+
+  footer {
+    justify-content: center;
+  }
+
+  footer nav {
+    display: none;
   }
 }
