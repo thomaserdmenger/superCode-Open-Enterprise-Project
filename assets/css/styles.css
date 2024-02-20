@@ -173,7 +173,8 @@ header .grid article p {
 
 /* ! Members Section */
 
-.members {
+.members,
+.investors {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   width: 90%;
@@ -201,6 +202,7 @@ header .grid article p {
   border: 3px solid var(--color-black);
   border-radius: 10px;
   padding: 2rem;
+  box-shadow: 10px 10px var(--color-green);
 }
 
 .members article:nth-of-type(2) .member {
@@ -212,6 +214,62 @@ header .grid article p {
 .members article:nth-of-type(2) .member p:first-of-type {
   font-family: Montserrat;
   font-weight: 700;
+}
+
+/* ! Investors Section */
+
+.investors article:first-of-type {
+  grid-column: 2 / span 1;
+}
+
+.investors article:last-of-type {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+}
+
+.investors article:nth-of-type(1) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.investors article:nth-of-type(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  border: 3px solid var(--color-black);
+  border-radius: 10px;
+  padding: 2rem;
+  margin-inline: 4rem;
+}
+
+.investors article:nth-of-type(2) .member {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.investors article:nth-of-type(2) .member p:first-of-type {
+  font-family: Montserrat;
+  font-weight: 700;
+}
+
+.members-row {
+  display: flex;
+  gap: 4rem;
+}
+
+.members-row div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.btn.black {
+  background-color: var(--color-black);
+  width: 90%;
 }
 
 /* ! Media Queries */
@@ -227,17 +285,30 @@ header .grid article p {
   }
 
   .work .grid,
-  .members {
+  .members,
+  .investors {
     grid-template-columns: 1fr;
     text-align: center;
   }
 
   .members article:first-of-type h2,
-  .members article:first-of-type p {
+  .members article:first-of-type p,
+  .investors article:first-of-type h2,
+  .investors article:first-of-type p {
     padding-inline: 5%;
   }
 
-  .members article:first-of-type img {
+  .members article:first-of-type img,
+  .investors article:first-of-type img {
     display: none;
+  }
+
+  .investors article:first-of-type {
+    grid-column: 1 / span 1;
+  }
+
+  .investors article:last-of-type {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
   }
 }
